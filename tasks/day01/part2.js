@@ -1,16 +1,12 @@
 import { calcRequiredFuel } from './part1.js';
 
 export function calcFuelForFuel(mass) {
-	let fuelTotal = 0;
-	let requiredFuel = mass;
+	let fuelNeeded = calcRequiredFuel(mass);
 
-	do {
-		requiredFuel = calcRequiredFuel(requiredFuel);
-		if (requiredFuel > 0) {
-			fuelTotal += requiredFuel;
-		}
-	} while (requiredFuel > 0);
-	return fuelTotal;
+	if (fuelNeeded > 0) {
+		return fuelNeeded + calcFuelForFuel(fuelNeeded);
+	}
+	return 0;
 }
 
 export function sumAllRequiredFuel(masses) {
