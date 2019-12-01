@@ -8,4 +8,3 @@ export function sumFuel(masses) {
 		return acc;
 	}, 0);
 }
-

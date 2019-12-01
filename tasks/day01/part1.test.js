@@ -1,5 +1,5 @@
 import { calcRequiredFuel, sumFuel } from './part1.js';
-import { puzzleinput01 } from './puzzleinput.js';
+import { calcFuelForFuel } from './part2.js';
 
 describe('calcRequiredFuel', () => {
 	describe.each`
@@ -13,12 +13,20 @@ describe('calcRequiredFuel', () => {
 			expect(calcRequiredFuel(mass)).toBe(fuel);
 		});
 	});
-
 	it('sumFuel sums up all required fuels of a given list of masses', () => {
 		expect(sumFuel([12, 14, 1969, 100756])).toBe(34241);
 	});
+});
 
-	it('returns the solution to the task', () => {
-		expect(sumFuel(puzzleinput01)).toBe(3233481);
+describe('calcFuelForFuel', () => {
+	describe.each`
+		mass      | fuel
+		${14}     | ${2}
+		${1969}   | ${966}
+		${100756} | ${50346}
+	`('for module with mass $mass', ({ mass, fuel }) => {
+		it(`returns a total of ${fuel} fuel required`, () => {
+			expect(calcFuelForFuel(mass)).toBe(fuel);
+		});
 	});
 });
