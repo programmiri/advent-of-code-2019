@@ -7,8 +7,8 @@ describe('runIntcode', () => {
 	});
 
 	it('[2,4,4,5,99,0] returns [2,4,4,5,99,9801]', () => {
-		const result = [2, 4, 4, 5, 99, 0];
-		expect(runIntcode(result)).toEqual([2, 4, 4, 5, 99, 9801]);
+		const result = runIntcode([2, 4, 4, 5, 99, 0]);
+		expect(result).toEqual([2, 4, 4, 5, 99, 9801]);
 	});
 
 	it('[1,1,1,4,99,5,6,0,99] returns [2,4,4,5,99,9801]', () => {
@@ -23,5 +23,10 @@ describe('runIntcode', () => {
 			0,
 			99,
 		]);
+	});
+
+	it('test', () => {
+		const result = runIntcode([2, 4, 4, 5, 99, 0]);
+		expect(result).toEqual([2, 4, 4, 5, 99, 9801]);
 	});
 });

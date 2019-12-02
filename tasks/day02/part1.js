@@ -1,4 +1,4 @@
-function runSequenz(startIndex, list) {
+export function runSequenz(startIndex, list) {
 	if (list[startIndex] === 1) {
 		const sum = list[list[startIndex + 1]] + list[list[startIndex + 2]];
 		list[list[startIndex + 3]] = sum;
@@ -9,9 +9,9 @@ function runSequenz(startIndex, list) {
 	return list;
 }
 
-function prep(list) {
-	list[1] = 12;
-	list[2] = 2;
+export function prep(list, position1, position2) {
+	list[1] = position1;
+	list[2] = position2;
 	return list;
 }
 
@@ -25,6 +25,6 @@ export function runIntcode(intList) {
 }
 
 export function preppedRunIntCode(intList) {
-	const preppedList = prep(intList);
+	const preppedList = prep(intList, 12, 2);
 	return runIntcode(preppedList);
 }

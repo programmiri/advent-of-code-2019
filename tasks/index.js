@@ -1,5 +1,5 @@
 import { puzzleinput02 } from './day02/puzzleinnput.js';
-import { preppedRunIntCode } from './day02/part1.js';
+import { findInputAndNoun } from './day02/part2.js';
 
-const result = preppedRunIntCode(puzzleinput02);
+const result = findInputAndNoun(puzzleinput02);
 console.log(result);
