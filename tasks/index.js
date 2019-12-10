@@ -1,5 +1,5 @@
-import { puzzleinput02 } from './day02/puzzleinnput.js';
-import { findInputAndNoun } from './day02/part2.js';
+import { wire1, wire2 } from './day03/puzzleinput.js';
+import { calcDistance } from './day03/task1.js';
 
-const result = findInputAndNoun(puzzleinput02);
+const result = calcDistance(wire1, wire2);
 console.log(result);
